@@ -1,0 +1,50 @@
+BaseURL = "http://www.flaviof.com/blog2/"
+languageCode = "en-us"
+title = "flaviof_blog2"
+theme = "helix"
+disqusShortname = "flaviofblog"
+googleAnalytics = "UA-54082757-1"
+ignoreFiles = [ "~$", "\\.gitignore$", "\\.gitkeep$" ]
+enableRobotsTXT = true
+pygmentsUseClasses = true
+[[menu.main]]
+    name = "All"
+    weight = 10
+    identifier = "post"
+    url = "post/"
+[[menu.main]]
+    name = "Main"
+    weight = 20
+    identifier = "main"
+    url = "/categories/main/"
+[[menu.main]]
+    name = "Hacks"
+    weight = 30
+    identifier = "hacks"
+    url = "/categories/hacks/"
+[[menu.main]]
+    name = "OldBlog"
+    weight = 100
+    identifier = "oldBlog"
+    url = "http://www.flaviof.com/blog/category/work.html"
+[[menu.main]]
+    name = "About"
+    weight = 110
+    identifier = "about"
+    url = "http://www.flaviof.com/blog/pages/about-me.html"
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    series = "series"
+[Author]
+    name = "Flavio Fernandes"
+    email = "flavio@flaviof.com"
+    facebook = "guteusa"
+    github = "flavio-fernandes"
+    twitter = "flaviof321"
+    linkedin = "pub/flavio-fernandes/3/110/a26"
+    # stackoverflow = "XXXXXXX/username"
+    # soundcloud = "username"
+    # wikipedia = "username"
+[Params]
+    logo = "img/avatar-icon.png"
