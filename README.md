@@ -1,8 +1,5 @@
 # flaviof-com
 
-flavio-com
-==========
-
 flaviof Blog Site (v2)
 
 This repo holds the contents for what is published under:
