@@ -7,113 +7,105 @@ title = "just ovn nodes"
 series = "Hacking OVN"
 +++
 
-Deploy OVN in minutes in a setup that is independent of OpenStack.
+Deploy OVN in minutes, independent of a _Cloud Management System_ (aka CMS) such as OpenStack.
 
 <!--more-->
 
-As it is normally the case, _Open Virtual Network_ (aka [OVN][]) is used in 
-conjunction
-with a _Cloud Management System_ (aka CMS). _OpenStack_ (aka [O/S][]) being the one that
-[many][OSComm] companies use. The project
-that connects these 2 pieces is [networking-ovn][], which is now implemented as a 
-neutron [module layer 2][ml2] plugin.
+Normally, _Open Virtual Network_ (aka [OVN][]) works in conjunction with a CMS.
+_OpenStack_ (aka [O/S][]), a popular CMS that [many][OSComm] companies use, implements OVN
+via [module layer 2][ml2] plug-in for the Networking service (neutron).
 
-I have played a bit with OpenStack in [past adventures][osPast] but have recently shifted my focus
-to OVN. In order to get better at that, I find it best to do a bit of [divide and conquer][divAndC]
-and initially leave the OpenStack portion out.
+I played a bit with OpenStack in [past adventures][osPast], but recently shifted my focus
+to OVN. In order to improve my OVN skills, I found it more productive to [divide and conquer][divAndC]
+by leaving the CMS, particularly OpenStack, out of the picture.
 
 # OVN in a sandbox
 
-A simple way of getting OVN up and running is by using
-the sandbox, which is heavily used by the [unit test][ovsTest]. A great reference for using that
-can be found in [OVN-Tutorial.md][].
-
-If you are curious about another example on using the OVN within a sandbox, check out the
-[output below][ovnSandbox]:
+You can easily deploy OVN using the sandbox, similar to the [unit tests][ovsTest]. For more
+information on the sandbox, see [OVN-Tutorial.md][]. For an example of using OVN within the
+sandbox, see [output below][ovnSandbox]:
 
 {{< gist anonymous 08f3d07aff4a26e368da3e5e12c7e3a1 >}}
 
-However, using the sandbox has some limitations:
+However, the sandbox has some limitations:
 
-  - OVS' fake (aka dummy) datapath offers only a subset of the functionality that is available by kernel.
-    [ACL and Conntrack][ovnAcl], to name a few.
+  - The fake (aka dummy) OVS datapath offers only a subset of the functionality available in
+    the kernel, [ACL and Conntrack][ovnAcl], to name a few.
 
-  - Unable to use Linux [lxc][] to provide namespaces (isolated ip stack instances).
-    Because OVS ports in a sandbox cannot be scoped by their own tcp/ip stack, it is not possible to
-    use powerful tools like _ping_ to generate traffic and see the rules in action.
-    Isolated ARP and routing tables are just not possible.
-    You will have to resort to using commands like **ovs-appctl netdev-dummy/receive**,
-    as shown at the end of the [sandbox][ovnSandbox] example above.
+  - Unable to use Linux [lxc][] to provide namespaces (isolated IP stack instances).
+    OVS ports in the sandbox cannot be scoped by their own TCP/IP stack, thus preventing
+    use of powerful tools like _ping_ to generate traffic and see the rules in action.
+    Similarly, isolated ARP and routing tables are not possible.
+    Instead, you must use commands like **ovs-appctl netdev-dummy/receive**,
+    as shown at the end of the [sandbox][ovnSandbox] example.
 
 ## Making the case for just-ovn-nodes
 
-Thus, to have something more _realistic_ than the sandbox, but yet not as _complex_ as an
+Thus, to provide something more _realistic_ than the sandbox, but yet not as _complex_ as an
 [OVN + networking-ovn + O/S deployment][networkingOvnVagrant], you can simply use
-**[just-ovn-nodes][]**! Using [Vagrant][], this repo
-gives us an automated way of getting all the pieces for a multi-node deployment with OVN. This
-can be used as a throwaway setup ([cattle][petCattle]) used for quickly trying something out;
-or as a starting place for creating a ([pet][petCattle]) cluster for OVN development.
+**[just-ovn-nodes][]**! Using [Vagrant][], this repository
+gives us an automated way of getting all the pieces for a multi-node deployment with OVN which
+serves as a "throwaway" setup ([cattle][petCattle]) for quickly trying something out or as a
+starting place for creating a ([pet][petCattle]) cluster for OVN development.
 Bear in mind I'm not the only one who has reached this serendipity. :) Folks like Guru --
 undoubtfully one of my awesome gurus --
-have a [similar repo][guruOvnNs] 
+have a [similar repository][guruOvnNs] 
 available. So, be sure to look around too.
 
-### Pre-requisites
+### Prerequisites
 
-Here are the dependencies for using [just-ovn-nodes][]:
+Dependencies for using [just-ovn-nodes][]:
 
-- Hypervisor (any that is supported by Vagrant)
+- Hypervisor (compatible with Vagrant)
 - git
 - Vagrant
-- Vagrant plugins (see below)
+- Vagrant plug-ins (see below)
 
-#### Vagrant plugins
+#### Vagrant plug-ins
 
     for p in vagrant-reload sahara vagrant-cachier ; do \
        vagrant plugin install $p
     done
 
-Vagrant plugin **vagrant-reload** is needed, so the provisioning of the node
-VMS can reboot them after installing a newer kernel in the trusty box.
-That is necessary, so OVN controllers can use the [Geneve][] encapsulation in
-order to reach each other through an overlay network.
+Vagrant plug-in **vagrant-reload** enables the provisioning process to reboot
+a VM after updating the kernel to a version that supports [Geneve][] encapsulation
+and other features necessary for OVN operation.
 
-Vagrant plugin **sahara** is optional but highly recommended. With that, you
-can quickly bring your cluster to a clean state after running the different OVN
-[setup scripts][ovnsetups]. If you are using Vagrant 1.8.0 or newer, you can
-use the built-in [vagrant snapshot][vgsnap] commands instead of the ones
-that the [sahara][] plugin offers. I find it that using [sahara][] is
-faster and works well in all versions of Vagrant. Life is full of choices, so
-I will show you how to use both.
+Vagrant plug-in **sahara** is optional but highly recommended. It enables returning
+your cluster to a clean state after running the different OVN [setup scripts][ovnsetups].
+If using Vagrant 1.8.0 or newer, you can simply use the built-in [vagrant snapshot][vgsnap]
+commands instead of the ones that the [sahara][] plug-in offers. However, I find [sahara][]
+faster and works well on all versions of Vagrant. Life is full of choices, so I will
+explain how to use both.
 
-Vagrant plugin **vagrant-cachier** is optional. By using it you will make it
-quicker to provision the VMS.
+Vagrant plug-in **vagrant-cachier** is optional and increases speed of the provisioning
+process.
 
-### Provisioning Steps
+### Provisioning
 
     $ git clone https://github.com/flavio-fernandes/just-ovn-nodes.git
     $ cd just-ovn-nodes
 
 #### Edit the file **provisioning/virtualbox.conf.yml**
 
-Adjust the parameters **ovn_repo** and **ovn_branch** to pick up the version of OVS/OVN you want. If you use the default, it will pick up a branch from my forked GitHub OVS repo that is a replica of original OVS master, but not the latest and greatest. If greatest and latest is what you want, simply use these values:
+Adjust the parameters **ovn_repo** and **ovn_branch** to pick up the appropriate version of OVS/OVN. If you use the default, it will pick up a branch from my forked GitHub OVS repository that is a replica of original OVS master, but not the latest and greatest. If you want the latter, simply use these values:
 
     ovn_repo: https://github.com/openvswitch/ovs.git
     ovn_branch: master
 
-By default, there will be 1 OVN database node and 3 compute nodes in the setup.
-However, node compute3 will not start automatically, unless you change its **autostart** parameter, or explicitly call **vagrant up compute3**. If you feel the need for having more compute nodes,
-by all means, go ahead! The changes for accomplishing that are simple.
-Do a search for the word _compute_ in these two files, and follow your
-intuition on what needs to be done:
+By default, the cluster contains one OVN database node and three compute nodes.
+However, node _compute3_ does not start automatically unless you change its **autostart** parameter
+or explicitly call **vagrant up compute3**. If you want more compute nodes, by all means, go ahead!
+The changes for accomplishing that are simple: perform a search for the word _compute_ in the
+following two files and follow your intuition on what to modify.
 (1) _Vagrantfile_; (2) _provisioning/virtualbox.conf.yml_
 
-If you want the OVN database node to also be used as a compute node, make sure
-to set the **install_ovn_controller** parameter to _yes_.
+If you also want to use the OVN database node as a compute node, set the **install_ovn_controller**
+parameter to _yes_.
 
-Since we are not provisioning CMS, the VMS require a _lot less_ memory.
-In the provisioning steps, the OVN database VM (aka central) will build packages and
-store them in the directory _provisioning/pkgs_. All other VMS will simply install these
+Since we are not provisioning a CMS, the VMs require a _lot less_ memory.
+In the provisioning steps, the OVN database VM (aka central) builds packages and
+stores them in the directory _provisioning/pkgs_. All other VMs simply install these
 packages instead of having to build OVN from scratch.
 
     $ vagrant up
@@ -126,14 +118,13 @@ takes a little over 12 minutes.
 
 #### Optional: install Wireshark
 
-It is always fun being able to look at the packets as _tenant ports_ talk to each other
-across different
-compute nodes. If you agree, go ahead and install Wireshark on the various nodes, by invoking the
-script I made part of the repo. It will grab the latest from **[ppa:wireshark-dev/stable][wsppa]**,
-so it can dissect packets that are encapsulated by [Geneve][].
+I find it fun to look at the packets as _tenant ports_ talk to each other across different
+compute nodes. If you agree, go ahead and install Wireshark on the various nodes by invoking the
+script included in the repository that grabs the latest version from
+**[ppa:wireshark-dev/stable][wsppa]** supporting [Geneve][] encapsulation.
 
 **Note:** When prompted about " **Should non-superusers be able to capture packets?** ",
-make sure to select " <**yes**> "
+select " <**yes**> "
 
     $ vagrant ssh central   # and also maybe compute{1,2,3}
     vagrant@central:~$ /vagrant/provisioning/setup-wireshark.sh
@@ -141,9 +132,8 @@ make sure to select " <**yes**> "
 
 #### Take snapshot now
 
-At this point the VMs are ready to start the OVN (and OVS) processes, so you can do anything
-you want. I would highly recommend taking a snapshot, so you can easily revert back to this
-state and always have a fresh cluster to play with.
+At this point, the VMs are ready to start the OVN (and OVS) processes, so you can do anything.
+I highly recommend taking a snapshot so you can easily revert back to this clean state.
 
     # snapshot vms using sahara
     $ vagrant sandbox on
@@ -161,44 +151,41 @@ state and always have a fresh cluster to play with.
     eth1: underlay network, interconnects tenant ports via tunnel
     eth2: added as part of the provider network (br-provider)
 
-The topology is very simple, as you can see above. By
-modifying the values in
-**provisioning/virtualbox.conf.yml** you can control what eth1 and eth2 addresses are
-configured for each of the VMs.
+By default, the topology is very simple. You can control the IP addresses for the _eth1_
+and _eth2_ interfaces in each VM by modifying the values in **provisioning/virtualbox.conf.yml**
 
 ### Start OVN cluster 
 
 At this point, you should start OVN cluster by running the script from the _OVN db_ VM (aka central):
 
-    # Note: if you do not provide vagrant with the VM that you want to
-    #       ssh into, it will connect to central, since it is
-    #       configured as primary in Vagranfile
+    # note: if you do not provide vagrant with the vm name, it
+    #       will connect to central, because it is configured
+    #       as primary in vagrantfile.
     $ vagrant ssh
     vagrant@central:~$ /vagrant/scripts/setup-ovn-cluster.sh
 
-The output will look like this:
+The output looks like the following:
 
 {{< gist anonymous a54e9289b0838b9391fd30d4b58d7536 >}}
 
-**Side note:** A trick used to _remotely_ configure and start OVS + OVN-controller
-in all the compute nodes from the central VM is defined in [scripts/helper-functions][rpcsh].
-**OVN-controller** in each one of the compute nodes knows where the Southbound DB is
-located through the **external-ids:ovn-remote**, in the open_vswitch database.
-That value is set by **ovs_open_vswitch_setup** function in
-file [provisioning/ovn-common-functions][ovnRemote] as shown here:
+**Note:** A trick used to _remotely_ configure and start OVS + OVN-controller
+on all the compute nodes from the central VM is defined in [scripts/helper-functions][rpcsh].
+**OVN-controller** in each one of the compute nodes knows the location of the Southbound database
+through **external-ids:ovn-remote** in the open_vswitch database. The **ovs_open_vswitch_setup**
+function in [provisioning/ovn-common-functions][ovnRemote] sets this value:
 
     ovs-vsctl set open_vswitch . external-ids:ovn-remote="$OVN_SB_REMOTE"
 
 #### Connect to each VM
 
-Open separate terminal sessions and ssh to all VMS, so you can inspect their flow tables.
-OVN related info can be obtained at the central VM. OVS ports used to represent tenant VMs
-are added using Linux namespaces, similar to what is done in OpenStack.
+Open separate terminal sessions and SSH to each VM so you can inspect the flow tables. You can
+obtain OVN information on the _central_ VM. OVS ports representing tenant VMs use Linux namespaces,
+similar to OpenStack.
 
     $ vagrant ssh compute1   ;  # or central, or compute2
 
-At this point, you can try out the various scripts in [/vagrant/scripts/tutorial][ovnsetups].
-You will need to run them from the _central_ node.
+At this point, you can try out the various scripts in [/vagrant/scripts/tutorial][ovnsetups] from
+the _central_ node.
 
 Output of **ovn-sbctl show**
 
@@ -217,8 +204,7 @@ Output of **ovn-sbctl show**
         Encap geneve
             ip: "192.168.33.33"
 
-
-Here is an example of what to expect when executing setup.sh for
+Example output after executing **setup.sh** for the
 the **env1** script:
 
     $ vagrant ssh central
@@ -249,18 +235,16 @@ the **env1** script:
         Encap geneve
             ip: "192.168.33.33"
 
-
-
 ### Ryan Moats' tools
 
 My friend and new colleague
 [regXboi][] has put together some handy tools for parsing and
-sorting  various output from a system running OVN. These tools are available at his
-[GitHub repo][regXboiRepo]:
+sorting various output from a system running OVN. You can find these tools in his
+[GitHub repository][regXboiRepo]:
 
     git clone https://github.com/jayhawk87/ovn-doc-tools.git
 
-Here is a sample output of some of these handy tools:
+Example output from some of these handy tools:
 
     $ vagrant ssh central
     vagrant@central:~$ cd /vagrant/
@@ -281,10 +265,10 @@ Here is a sample output of some of these handy tools:
     vagrant@compute1:/vagrant/ovn-doc-tools$ sudo ./dump-ovs.sh
     ## You'll see: https://gist.github.com/e198bb738c14f49e9e40ab7f5e677e42
 
-### Getting cluster back to fresh and clean state
+### Restore the cluster to a fresh and clean state
 
-Assuming you created a snapshot after doing the initial provisioning of the
-VMS, this is how you can restore them back to that state:
+Assuming you created a snapshot after initial provisioning of the VMs,
+you can restore them to a fresh and clean state:
 
     # snapshot vms using sahara
     $ vagrant sandbox rollback
@@ -296,9 +280,9 @@ VMS, this is how you can restore them back to that state:
 
 ### show-ns-ports.sh
 
-In order to quickly know the mappings of a namespace, the logical ports and their
-bindings, consider using the **[show-ns-ports.sh][]** script. Here is an example
-of what to expect, after configuring the cluster with the **l3_nat** setup script.
+In order to quickly reveal the mappings of a namespace, the logical ports and their
+bindings, consider using the **[show-ns-ports.sh][]** script. Example output after
+configuring the cluster with the **l3_nat** setup script:
 
     $ vagrant sandbox rollback
     $ vagrant ssh
@@ -310,11 +294,10 @@ of what to expect, after configuring the cluster with the **l3_nat** setup scrip
     ns1 in compute1 has eth0 with 192.168.1.2 matches lsp foo1
     ns2 in compute2 has eth0 with 172.16.1.2 matches lsp alice1
 
-### Looking at packets with [Geneve][] encapsulation
+### Inspecting packets with [Geneve][] encapsulation
 
-If you did the step on installing Wireshark, continue on from the commands
-mentioned in **show-ns-ports.sh** above, and check out the packets across
-the compute nodes.
+If you installed Wireshark, continue from the commands in **show-ns-ports.sh**
+and inspect the packets traversing the compute nodes.
 
     # ssh with X11 forwarding
     $ vagrant ssh compute1 -- -XY
@@ -327,21 +310,19 @@ the compute nodes.
     vagrant@compute1:~$ sudo ip netns exec ns1 bash
     root@compute1:~# ping 172.16.1.2
 
-Back in the Wireshark window, start capture on eth1 of compute1. You should
-be able to see the ICMP packets, as shown below:
+In the Wireshark window, start a capture on the _eth1_ interface in _compute1_. You should
+see the ICMP packets as follows:
 
 {{< figure src="img/just-ovn-nodes/just-ovn-nodes-wireshark.jpg" title="" >}}
 
 #### A few interesting facts about the Geneve portion of the capture
 
-As we are capturing a ping between foo1 and alice1, we can correlate the
+As we capture a _ping_ between _foo1_ and _alice1_, we can correlate the
 fields in the Geneve capture as follows. Note that this is the ICMP reply,
-from alice1 to foo1 (through router R1).
+from _alice1_ to _foo1_ (through router _R1_).
 
-To understand these, look at the doc called [ovn-architecture][OVNArchit],
-under the Tunnel encapsulations section. Note that soon that may move
-to a separate file (called **ovn/OVN-DESIGN.md**), as shown
-in [this patch][ovnDesign].
+To understand the output, see the tunnel encapsulations section of [ovn-architecture][OVNArchit].
+This content may move to a separate file (**ovn/OVN-DESIGN.md**) according to [this patch][ovnDesign].
 
      VNI: 00 00 03  <== tunnel key ; should be LS foo
      class: 01 02 
@@ -351,7 +332,7 @@ in [this patch][ovnDesign].
      00 02  <== egress port (logical) ; should be foo1
 
 So, does it look right? To find out, we need to ensure that tunnel key 3
-belongs to the logical switch that has foo1 (ie foo):
+belongs to the logical switch containing _foo1_ (aka _foo_):
 
     vagrant@central:~$ sudo ovn-nbctl show
         switch 051478a4-6a2c-4ed7-9a10-cf71e26a8bb5 (foo)
@@ -368,8 +349,9 @@ belongs to the logical switch that has foo1 (ie foo):
     tunnel_key          : 3  <=== yeah!
     ...
 
-Next, we need to see what logical ports 1 and 2 for logical switch foo mean.
-This is not all that exciting since the only 2 ports in LS foo are foo1 and rp-foo.
+Next, we need to see what logical ports 1 and 2 for logical switch _foo_ mean.
+Nothing particularly exciting because logical switch _foo_ only contains two ports:
+_foo1_ and _rp-foo_.
 
     vagrant@central:~$ sudo ovn-sbctl list Port_Binding
     ...
@@ -408,36 +390,31 @@ This is not all that exciting since the only 2 ports in LS foo are foo1 and rp-f
     ...
 
 
-### Hooking up port from namespace to br-int
+### Connecting a port from a namespace to br-int
 
-Lastly, I would like to spend a few lines talking about the
-various ways that OVS ports can get scoped by namespace, and how OVN is able
-to map a logical port to an OVS port, at any given compute node (aka chassis).
+Lastly, I want spend some time discussing the various ways that namespaces can scope OVS
+ports and how OVN can map a logical port to an OVS port on any given compute node (aka chassis).
 
-For starters, read [this page][ovsPortNs] to see the variations on how
-this is accomplished. Then, look at the script **[create-ns-port.sh][]**. After considering
-creating an [internal][usingOvsInternal] port in OVS,
-I thought that using veth is nicer for
-debugging, so we can easily attach Wireshark to the corresponding veth interface outside
-the namespace.
+First, read [this page][ovsPortNs] to see the variations on how this is accomplished. Next,
+look at the script **[create-ns-port.sh][]**. After creating an [internal][usingOvsInternal]
+port in OVS, I found using _veth_ more practical for debugging because we can easily attach
+Wireshark to it.
 
 To map a logical port to a physical OVS port, OVN relies on the **external-ids:iface-id**
 field, set during the port creation and [shown here][ovsExternalId].
 
-In order to have a unique id for the namespaces used, the script requires you to use the
-central VM. With that, it leverages the [file lock][flock] API, through the function
+In order to choose a unique ID for each namespace, the script requires you to use the
+central VM because it can leverage the [file lock][flock] API through the function
 [get_next_counter_value][].
 
 ### Closing blurb
 
-All in all, I hope this offers an easy way into the vast world of OVN and how you can
-get your feet wet with it.
-As you can assume, there are many extremely smart and friendly people
-in the OVS+OVN community. As I learn from them and do OVN experiments of my own,
-I will post more related blogs on this site. A deeper dive into the various logical
-and OpenFlow rules is high on my todo list. Your feedback is very welcome, always! The
-[about link][aboutff] at the top of this page should give you a bunch
-of ways you can reach me.
+All in all, I hope this content provides an easy way into the vast world of OVN in a simple
+fashion. The OVN+OVS community contains many extremely smart and friendly people. As I learn from
+them and do OVN experiments of my own, I shall post more blogs, particularly a deeper dive into
+the various logical and OpenFlow rules. I appreciate your feedback.
+The [about link][aboutff] at the top of this page should provide a bunch
+of ways to can reach me.
 
 ## Some -- incomplete list of -- links related to this topic you might want
 to visit:
@@ -448,9 +425,9 @@ to visit:
   - Russell's [blogs on OVN](https://blog.russellbryant.net/category/ovs/ovn/)
   - Kyle's [blogs on OVN](https://www.siliconloons.com/categories/ovn/)
   - [OVN Architecture][OVNArchit]
-  - Guru's [repo in installing OVN][guruOvnNs]
+  - Guru's [repository in installing OVN][guruOvnNs]
   - Miguel's [Blog pages](http://www.ajo.es/)
-  - Miguel's [repo on OVS experiments](https://github.com/mangelajo/ovs-experiments)
+  - Miguel's [repository on OVS experiments](https://github.com/mangelajo/ovs-experiments)
   - Scott Lowe's [blogs on OVN](http://blog.scottlowe.org/tags/#OVN)
   - Okay Google, [lookup OVN for me](http://bfy.tw/6zEN)
 
@@ -475,7 +452,7 @@ to visit:
 [networkingOvnVagrant]: https://github.com/openstack/networking-ovn/tree/master/vagrant "Automatic deployment using Vagrant and VirtualBox"
 [aboutff]: http://www.flaviof.com/blog/pages/about-me.html "About flaviof"
 [vgsnap]: https://www.vagrantup.com/docs/cli/snapshot.html "Vagrant snapshot"
-[sahara]: https://github.com/jedi4ever/sahara "Vagrant plugin sahara"
+[sahara]: https://github.com/jedi4ever/sahara "Vagrant plug-in sahara"
 [show-ns-ports.sh]: https://raw.githubusercontent.com/flavio-fernandes/just-ovn-nodes/master/scripts/show-ns-ports.sh "show-ns-ports.sh"
 [ovnsetups]: https://github.com/flavio-fernandes/just-ovn-nodes/tree/master/scripts/tutorial "OVN setup scripts"
 [wsppa]: https://launchpad.net/~wireshark-dev/+archive/ubuntu/stable "Wireshark Developers team"
