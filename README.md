@@ -15,15 +15,19 @@ To generate this site, follow the instructions below:
 
    `git clone git@github.com:flavio-fernandes/flaviof-com.git && cd flaviof-com`
 
-2. Build the site using hugo
+2. To render drafts on local server, run the command shown below:
+
+   $ hugo server --buildDrafts
+
+3. Build the site using hugo
 
    `hugo`
 
-3. Sync the content out to your hosting provider:
+4. Sync the content out to your hosting provider:
 
    `rsync -avz --delete -e ssh public/* flaviof.com:flaviof.com/blog2/`
 
-4. You're done!
+5. You're done!
 
 To create a new post, run a command such as the following:
 

@@ -303,7 +303,7 @@ and inspect the packets traversing the compute nodes.
     # ssh with X11 forwarding
     $ vagrant ssh compute1 -- -XY
     # start Wireshark and ignore warnings about "swrast"
-    vagrant@compute1:~$ wireshark > /dev/null 2>1 &
+    vagrant@compute1:~$ wireshark > /dev/null 2>&1 &
 
     # there should be 2 namespaces in compute1, as mentioned in the
     # output of the show-ns-ports.sh above. Start a shell inside ns1
