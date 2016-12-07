@@ -17,7 +17,7 @@ To generate this site, follow the instructions below:
 
 2. To render drafts on local server, run the command shown below:
 
-   $ hugo server --buildDrafts
+   $ hugo server --buildDrafts --watch
 
 3. Build the site using hugo
 
@@ -31,7 +31,7 @@ To generate this site, follow the instructions below:
 
 To create a new post, run a command such as the following:
 
-   `hugo new post/main/welcome-to-hugo.md`
+   `hugo new post/hacks/test.md'
 
 References
 ==========
