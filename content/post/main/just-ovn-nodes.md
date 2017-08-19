@@ -440,7 +440,7 @@ of ways to can reach me.
 [osPast]: http://www.flaviof.com/blog/tag/openstack.html "Past adventures with OpenStack"
 [divAndC]: https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms "Divide and Conquer"
 [ovsTest]: https://github.com/openvswitch/ovs/tree/master/tests "OVS and OVN unit tests"
-[OVN-Tutorial.md]: https://github.com/openvswitch/ovs/blob/master/tutorial/OVN-Tutorial.md "OVN Tutorial -- using sandbox"
+[OVN-Tutorial.md]: https://github.com/openvswitch/ovs/blob/master/Documentation/tutorials/ovn-sandbox.rst "OVN Tutorial -- using sandbox"
 [ovnSandbox]: https://gist.githubusercontent.com/anonymous/08f3d07aff4a26e368da3e5e12c7e3a1/raw/386f48218221b8a1ba2a70642c2204e540133937/gistify194222.txt "OVS sandbox example"
 [lxc]: https://linuxcontainers.org/lxc/introduction/ "Linux namespace"
 [ovnAcl]: https://blog.russellbryant.net/2015/10/22/openstack-security-groups-using-ovn-acls/ "Russell's OVN ACL"
