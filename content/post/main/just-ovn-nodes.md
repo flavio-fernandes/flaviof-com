@@ -236,36 +236,6 @@ the **env1** script:
         Encap geneve
             ip: "192.168.33.33"
 
-### Ryan Moats' Tools
-
-My friend and new colleague
-[regXboi][] has put together some handy tools for parsing and
-sorting various output from a system running OVN. You can find these tools in his
-[GitHub repository][regXboiRepo]:
-
-    git clone https://github.com/jayhawk87/ovn-doc-tools.git
-
-Example output from some of these handy tools:
-
-    $ vagrant ssh central
-    vagrant@central:~$ cd /vagrant/
-    vagrant@central:/vagrant$ git clone https://github.com/jayhawk87/ovn-doc-tools.git
-    vagrant@central:/vagrant$ ./scripts/setup-ovn-cluster.sh
-    vagrant@central:/vagrant$ ./scripts/tutorial/env1/setup.sh
-    vagrant@central:/vagrant$ cd ovn-doc-tools/
-    vagrant@central:/vagrant/ovn-doc-tools$ sudo ./dump-ovn-nb.sh
-    ## You'll see: https://gist.github.com/ded27fc5875a84a69c7e5e37207b2257
-
-    vagrant@central:/vagrant/ovn-doc-tools$ sudo ./dump-ovn-sb.sh
-    ## You'll see: https://gist.github.com/5f639d40513354cde26ae5b41e080306
-
-    vagrant@central:/vagrant$ exit
-
-    $ vagrant ssh compute1
-    vagrant@compute1:~$ cd /vagrant/ovn-doc-tools/
-    vagrant@compute1:/vagrant/ovn-doc-tools$ sudo ./dump-ovs.sh
-    ## You'll see: https://gist.github.com/e198bb738c14f49e9e40ab7f5e677e42
-
 ### Getting Cluster Back to “Fresh and Clean” State
 
 Assuming you created a snapshot after initial provisioning of the VMs,
@@ -423,12 +393,14 @@ of ways to can reach me.
   - [Introduction to OVN](http://galsagie.github.io/2015/04/20/ovn-1/), by Gal
   - networking-ovn's Vagrant for [deploying O/S cluster][networkingOvnVagrant]
   - Russell's [blogs on OVN](https://blog.russellbryant.net/category/ovs/ovn/)
+  - Russell's [Understanding the Open Virtual Network](http://next.redhat.com/2017/08/15/understanding-the-open-virtual-network/) post
   - Kyle's [blogs on OVN](https://www.siliconloons.com/categories/ovn/)
   - [OVN Architecture][OVNArchit]
   - Guru's [repository in installing OVN][guruOvnNs]
   - Miguel's [Blog pages](http://www.ajo.es/)
   - Miguel's [repository on OVS experiments](https://github.com/mangelajo/ovs-experiments)
-  - Scott Lowe's [blogs on OVN](http://blog.scottlowe.org/tags/#OVN)
+  - Scott Lowe's [blogs on OVN](https://blog.scottlowe.org/tags/ovn/)
+  - Dustin Spinhirne's [The OVN Gateway Router](http://blog.spinhirne.com/2016/09/the-ovn-gateway-router.html)
   - Okay Google, [lookup OVN for me](http://bfy.tw/6zEN)
 
 [OVN]: https://networkheresy.wordpress.com/2015/01/13/ovn-bringing-native-virtual-networking-to-ovs/ "Open Virtual Network"
@@ -458,8 +430,6 @@ of ways to can reach me.
 [wsppa]: https://launchpad.net/~wireshark-dev/+archive/ubuntu/stable "Wireshark Developers team"
 [rpcsh]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/56ed2d1e4b0df3bff537742b5d95cabff4a45b6f/scripts/helper-functions#L20 "rpcsh"
 [ovnRemote]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/56ed2d1e4b0df3bff537742b5d95cabff4a45b6f/provisioning/ovn-common-functions#L45 "ovs_open_vswitch_setup"
-[regXboi]: https://github.com/jayhawk87 "Ryan Moats"
-[regXboiRepo]: https://github.com/jayhawk87/ovn-doc-tools "Ryan's ovn-doc-tools"
 [ovsPortNs]: http://www.opencloudblog.com/?p=66 "Interconnecting Namespaces"
 [create-ns-port.sh]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/a8531151dc4b15902dd51c03f0163c5de3e986a0/scripts/create-ns-port.sh "create-ns-port.sh"
 [usingOvsInternal]: https://github.com/flavio-fernandes/just-ovn-nodes/commit/b67d2dd62b230a065139d1531c58fcb1e7329753 "Using internal OVS port instead of veth pair"
