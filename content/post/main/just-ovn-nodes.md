@@ -394,7 +394,7 @@ of ways to can reach me.
   - networking-ovn's Vagrant for [deploying O/S cluster][networkingOvnVagrant]
   - Russell's [blogs on OVN](https://blog.russellbryant.net/category/ovs/ovn/)
   - Russell's [Understanding the Open Virtual Network](http://next.redhat.com/2017/08/15/understanding-the-open-virtual-network/) post
-  - Kyle's [blogs on OVN](https://www.siliconloons.com/categories/ovn/)
+  - Kyle's [blogs on OVN](https://blog.siliconloons.com/categories/ovn/)
   - [OVN Architecture][OVNArchit]
   - Guru's [repository in installing OVN][guruOvnNs]
   - Miguel's [Blog pages](http://www.ajo.es/)

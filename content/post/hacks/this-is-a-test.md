@@ -25,7 +25,7 @@ Tools
 [Setting up Sublime Text for Python][]  
 [PyCharm - A Python IDE][]
 
-  [Kyle]: http://siliconloons.com/
+  [Kyle]: https://blog.siliconloons.com/
   [Coursera]: https://www.coursera.org/
   [Codeacademy]: http://www.codecademy.com/tracks/python
   [Sublime Text]: http://www.sublimetext.com/
