@@ -20,3 +20,9 @@ having it mentioned in the [Show-and-Tell](https://youtu.be/2VQixyqWGfE?t=584) o
 [![Show-and-Tell Adafruit](https://img.youtube.com//vi/2VQixyqWGfE/0.jpg)](https://youtu.be/2VQixyqWGfE?t=584 "Bedclock Adafruit Show-and-Tell")
 
 Fun times!
+
+### Update: Blog on Adafruit
+
+I also published a page on Adafruit's learn page on how to build the project. Here is the link for that:
+**[https://learn.adafruit.com/motion-controlled-matrix-bed-clock](https://learn.adafruit.com/motion-controlled-matrix-bed-clock)**
+
