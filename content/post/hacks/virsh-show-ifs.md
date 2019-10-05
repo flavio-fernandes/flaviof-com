@@ -2,7 +2,7 @@
 author = "flaviof"
 categories = ["main", "hacks"]
 date = "2016-12-07T09:40:32-05:00"
-tags = ["libvirt"]
+tags = ["bash", "libvirt"]
 title = "virsh show ifs"
 +++
 
