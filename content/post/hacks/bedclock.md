@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main", "hacks"]
+categories = ["hacks"]
 date = "2018-10-10T19:41:00-05:00"
 tags = ["diy", "rpi", "python"]
 title = "bedclock"
