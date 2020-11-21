@@ -23,7 +23,13 @@
            <a class="post-nav next-post" href="{{ .NextInSection.Permalink }}">Next Post</a>
         {{ end }}
     </div>
-    {{ template "_internal/disqus.html" . }}
+    <script src="https://utteranc.es/client.js"
+	    repo="flavio-fernandes/flaviof-com"
+	    issue-term="pathname"
+	    theme="github-dark"
+	    crossorigin="anonymous"
+	    async>
+    </script>
     </section>
     {{ partial "sidebar.html" . }}
 </div>

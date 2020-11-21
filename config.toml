@@ -2,7 +2,6 @@ BaseURL = "http://www.flaviof.com/blog2/"
 languageCode = "en-us"
 title = "flaviof_blog2"
 theme = "helix"
-disqusShortname = "flaviofblog"
 googleAnalytics = "UA-54082757-1"
 ignoreFiles = [ "~$", "\\.gitignore$", "\\.gitkeep$" ]
 enableRobotsTXT = true
