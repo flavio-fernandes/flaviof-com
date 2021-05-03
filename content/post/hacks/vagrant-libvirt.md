@@ -144,6 +144,7 @@ It may be worth mentioning some good vagrant-like alternatives:
 - [virt-builder](http://manpages.ubuntu.com/manpages/bionic/man1/virt-builder.1.html): Build virtual machine images quickly
 - [virt-install](https://linux.die.net/man/1/virt-install): Provision new virtual machines
 - [ansible-virt](https://docs.ansible.com/ansible/latest/modules/virt_module.html): Ansible virt module
+- [Virt-Lightning](https://virt-lightning.org): Virt-Lightning: a CLI to start local Cloud image on libvirt
 - ???: Please help me make this list better!
 
 So, next time you find yourself installing vagrant-libvirt plugin, I hope this page can
