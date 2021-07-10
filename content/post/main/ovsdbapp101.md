@@ -4,6 +4,7 @@ categories = ["main"]
 date = "2019-11-30T17:01:00-05:00"
 tags = ["bash", "ovn", "python"]
 title = "OVN via OVSDBApp"
+series = "Hacking OVN"
 +++
 
 Configuring OVN natively using a python library

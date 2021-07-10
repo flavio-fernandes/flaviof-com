@@ -4,6 +4,7 @@ categories = ["main"]
 date = "2020-11-15T17:01:00-05:00"
 tags = ["bash", "ovn"]
 title = "ddlog and OVN"
+series = "Hacking OVN"
 +++
 
 My first encounter with ddlog integrated with ovn-northd 

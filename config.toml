@@ -38,10 +38,10 @@ pygmentsUseClasses = true
 [Author]
     name = "Flavio Fernandes"
     email = "flavio@flaviof.com"
-    facebook = "guteusa"
     github = "flavio-fernandes"
     twitter = "flaviofdev"
     linkedin = "pub/flavio-fernandes/3/110/a26"
+    # facebook = "username"
     # stackoverflow = "XXXXXXX/username"
     # soundcloud = "username"
     # wikipedia = "username"
