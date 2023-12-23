@@ -389,26 +389,26 @@ of ways to can reach me.
 
 ## Some links related to this topic you might want to visit:
 
-  - [OVS Orbit](http://ovsorbit.benpfaff.org/), by Ben Pfaff
-  - [Introduction to OVN](http://galsagie.github.io/2015/04/20/ovn-1/), by Gal
+  - [OVS Orbit](https://ovsorbit.benpfaff.org/), by Ben Pfaff
+  - [Introduction to OVN](https://galsagie.github.io/2015/04/20/ovn-1/), by Gal
   - networking-ovn's Vagrant for [deploying O/S cluster][networkingOvnVagrant]
   - Russell's [blogs on OVN](https://blog.russellbryant.net/category/ovs/ovn/)
-  - Russell's [Understanding the Open Virtual Network](http://next.redhat.com/2017/08/15/understanding-the-open-virtual-network/) post
+  - Russell's [Understanding the Open Virtual Network](https://next.redhat.com/2017/08/15/understanding-the-open-virtual-network/) post
   - Kyle's [blogs on OVN](https://blog.siliconloons.com/categories/ovn/)
   - [OVN Architecture][OVNArchit]
   - Guru's [repository in installing OVN][guruOvnNs]
-  - Miguel's [Blog pages](http://www.ajo.es/)
+  - Miguel's [Blog pages](https://ajo.es/)
   - Miguel's [repository on OVS experiments](https://github.com/mangelajo/ovs-experiments)
   - Scott Lowe's [blogs on OVN](https://blog.scottlowe.org/tags/ovn/)
   - Dustin Spinhirne's [The OVN Gateway Router](http://blog.spinhirne.com/2016/09/the-ovn-gateway-router.html)
   - Okay Google, [lookup OVN for me](http://bfy.tw/6zEN)
 
 [OVN]: https://networkheresy.wordpress.com/2015/01/13/ovn-bringing-native-virtual-networking-to-ovs/ "Open Virtual Network"
-[O/S]: http://www.openstack.org/ "OpenStack"
-[OSComm]: http://www.openstack.org/community/ "OpenStack Community"
-[OVNArchit]: http://openvswitch.org/support/dist-docs/ovn-architecture.7.html "Open Virtual Network Architecture"
-[networking-ovn]: http://docs.openstack.org/developer/networking-ovn/readme.html "networking-ovn - OpenStack Neutron integration with OVN"
-[ml2]: http://www.slideshare.net/mestery/modular-layer-2-in-openstack-neutron "Modular Layer 2 In OpenStack Neutron"
+[O/S]: https://www.openstack.org/ "OpenStack"
+[OSComm]: https://www.openstack.org/community/ "OpenStack Community"
+[OVNArchit]: https://www.ovn.org/support/dist-docs/ovn-architecture.7.html "Open Virtual Network Architecture"
+[networking-ovn]: https://docs.openstack.org/developer/networking-ovn/readme.html "networking-ovn - OpenStack Neutron integration with OVN"
+[ml2]: https://www.slideshare.net/mestery/modular-layer-2-in-openstack-neutron "Modular Layer 2 In OpenStack Neutron"
 [osPast]: http://www.flaviof.com/blog/tag/openstack.html "Past adventures with OpenStack"
 [divAndC]: https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms "Divide and Conquer"
 [ovsTest]: https://github.com/openvswitch/ovs/tree/master/tests "OVS and OVN unit tests"
@@ -420,7 +420,7 @@ of ways to can reach me.
 [Geneve]: https://datatracker.ietf.org/doc/draft-gross-geneve/ "Geneve encapsulation"
 [just-ovn-nodes]: https://github.com/flavio-fernandes/just-ovn-nodes "Just OVN Nodes"
 [guruOvnNs]: https://github.com/shettyg/ovn-namespace "Installing OVN from source -- Guru"
-[petCattle]: http://www.it20.info/2012/12/vcloud-openstack-pets-and-cattle/ "Pet vs cattle"
+[petCattle]: https://www.it20.info/2012/12/vcloud-openstack-pets-and-cattle/ "Pet vs cattle"
 [networkingOvnVagrant]: https://github.com/openstack/networking-ovn/tree/master/vagrant "Automatic deployment using Vagrant and VirtualBox"
 [aboutff]: http://www.flaviof.com/blog/pages/about-me.html "About flaviof"
 [vgsnap]: https://www.vagrantup.com/docs/cli/snapshot.html "Vagrant snapshot"
@@ -430,10 +430,10 @@ of ways to can reach me.
 [wsppa]: https://launchpad.net/~wireshark-dev/+archive/ubuntu/stable "Wireshark Developers team"
 [rpcsh]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/56ed2d1e4b0df3bff537742b5d95cabff4a45b6f/scripts/helper-functions#L20 "rpcsh"
 [ovnRemote]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/56ed2d1e4b0df3bff537742b5d95cabff4a45b6f/provisioning/ovn-common-functions#L45 "ovs_open_vswitch_setup"
-[ovsPortNs]: http://www.opencloudblog.com/?p=66 "Interconnecting Namespaces"
+[ovsPortNs]: https://www.opencloudblog.com/?p=66 "Interconnecting Namespaces"
 [create-ns-port.sh]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/a8531151dc4b15902dd51c03f0163c5de3e986a0/scripts/create-ns-port.sh "create-ns-port.sh"
 [usingOvsInternal]: https://github.com/flavio-fernandes/just-ovn-nodes/commit/b67d2dd62b230a065139d1531c58fcb1e7329753 "Using internal OVS port instead of veth pair"
-[flock]: http://www.kfirlavi.com/blog/2012/11/06/elegant-locking-of-bash-program/ "File lock"
+[flock]: https://www.kfirlavi.com/blog/2012/11/06/elegant-locking-of-bash-program/ "File lock"
 [get_next_counter_value]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/a8531151dc4b15902dd51c03f0163c5de3e986a0/scripts/helper-functions#L53 "get_next_counter_value"
 [ovnDesign]: https://patchwork.ozlabs.org/patch/652013/ "OVN-DESIGN.md document"
 [ovsExternalId]: https://github.com/flavio-fernandes/just-ovn-nodes/blob/a8531151dc4b15902dd51c03f0163c5de3e986a0/scripts/create-ns-port.sh#L64 "OVS port external-id"

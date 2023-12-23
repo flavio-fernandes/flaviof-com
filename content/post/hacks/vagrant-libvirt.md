@@ -140,8 +140,8 @@ end
 
 It may be worth mentioning some good vagrant-like alternatives:
 
-- [uvt-kvm](http://manpages.ubuntu.com/manpages/bionic/man1/uvt-kvm.1.html): Ubuntu virtualization front-end for libvirt and KVM
-- [virt-builder](http://manpages.ubuntu.com/manpages/bionic/man1/virt-builder.1.html): Build virtual machine images quickly
+- [uvt-kvm](https://manpages.ubuntu.com/manpages/bionic/man1/uvt-kvm.1.html): Ubuntu virtualization front-end for libvirt and KVM
+- [virt-builder](https://manpages.ubuntu.com/manpages/bionic/man1/virt-builder.1.html): Build virtual machine images quickly
 - [virt-install](https://linux.die.net/man/1/virt-install): Provision new virtual machines
 - [ansible-virt](https://docs.ansible.com/ansible/latest/modules/virt_module.html): Ansible virt module
 - [Virt-Lightning](https://virt-lightning.org): Virt-Lightning: a CLI to start local Cloud image on libvirt

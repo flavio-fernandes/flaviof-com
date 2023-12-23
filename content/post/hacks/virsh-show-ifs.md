@@ -53,6 +53,6 @@ If this is useful to you, put it in your path.
 And feel free to share it with your geek friends. :)
 
 
-[virsh]: http://libvirt.org/virshcmdref.html#viewing
+[virsh]: https://libvirt.org/virshcmdref.html#viewing
 [virsh_show_ifs]: https://gist.githubusercontent.com/flavio-fernandes/a773842c5b6748992482d74d6c1cb543/raw/d57ea3850cc40052ff09abad609e9662f00b432b/virsh_show_ifs
 [virsh_show_ifs_old]: https://gist.githubusercontent.com/anonymous/53e04a414c0d653b0edc2d39d513b1a4/raw/7409bcde914a83eafe916871d725f98058d4dc88/gistify146068.txt

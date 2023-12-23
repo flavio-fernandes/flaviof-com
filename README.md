@@ -4,7 +4,7 @@ flaviof Blog Site (v2)
 
 This repo holds the contents for what is published under:
 
-http://flaviof.com/blog2
+https://flaviof.com/blog2
 
 Howto
 =====
@@ -39,11 +39,11 @@ This Readme file was copied from and inspired by the following links:
 
 * Original flaviof.com blog: https://github.com/flavio-fernandes/pelican-blog
 * Silicon Loons Blog Site: https://github.com/mestery/siliconloons
-* David Allen Website: http://davidrallen.com/
+* David Allen Website: https://davidrallen.com/
 
 The following are links for references for working with Hugo and Markdown:
 
-* Hugo commands: http://gohugo.io/commands/
+* Hugo commands: https://gohugo.io/commands/
 * Toml notation:  https://github.com/toml-lang/toml
 * Markdown Cheatsheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 

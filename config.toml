@@ -1,4 +1,4 @@
-BaseURL = "http://www.flaviof.com/blog2/"
+BaseURL = "https://www.flaviof.com/blog2/"
 languageCode = "en-us"
 title = "flaviof_blog2"
 theme = "helix"

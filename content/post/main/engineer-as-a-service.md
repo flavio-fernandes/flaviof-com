@@ -37,7 +37,7 @@ The second and last ingredient that makes a good engineer is delivering quality 
 While trusting upper management to shield us from disruptions, we can be laser-focused on understanding the intricacies of the code and making it work.
 For that moment, there is nothing else but you and the machine.
 The longer we manage to be in there, the better the results. Getting in the zone is a delicate endeavor.
-One of my favorite articles discussing this is the _[Maker's Schedule; Manager's Schedule](http://www.paulgraham.com/makersschedule.html)_, by [Paul Graham](http://www.paulgraham.com/bio.html).
+One of my favorite articles discussing this is the _[Maker's Schedule; Manager's Schedule](https://www.paulgraham.com/makersschedule.html)_, by [Paul Graham](https://www.paulgraham.com/bio.html).
 
 While some define competence as a mix of _intelligence_ and _discipline_, I view it as a blend of _curiosity_ and _stubbornness_.
 Keeping notes along the way is also very helpful!
@@ -66,7 +66,7 @@ As engineers, we're often focused on the technicalities, the code, and the syste
 
 ## Some links related to this article:
 
-- [Maker's Schedule; Manager's schedule](http://www.paulgraham.com/makersschedule.html): Insights into optimizing your work schedule for maximum productivity
+- [Maker's Schedule; Manager's schedule](https://www.paulgraham.com/makersschedule.html): Insights into optimizing your work schedule for maximum productivity
 - [Redefining the Networking Industry Through Collaboration](https://youtu.be/SAimeBttapA?t=313): A note on the pixie-dust of working as a team
 - [Calvin Coolidge Was Almost Right](https://www.growthink.com/content/calvin-coolidge-was-almost-right): An interesting twist to the persistence point of view
 - [My third week at Red Hat](http://flaviof.com/blog/viewpoint/week-3-at-red-hat.html): Coding skills is half of the story

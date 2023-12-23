@@ -27,7 +27,7 @@ Tools
 
   [Kyle]: https://blog.siliconloons.com/
   [Coursera]: https://www.coursera.org/
-  [Codeacademy]: http://www.codecademy.com/tracks/python
-  [Sublime Text]: http://www.sublimetext.com/
-  [Setting up Sublime Text for Python]: http://dbader.org/blog/setting-up-sublime-text-for-python-development
-  [PyCharm - A Python IDE]: http://www.jetbrains.com/pycharm/
+  [Codeacademy]: https://www.codecademy.com/tracks/python
+  [Sublime Text]: https://www.sublimetext.com/
+  [Setting up Sublime Text for Python]: https://dbader.org/blog/setting-up-sublime-text-for-python-development
+  [PyCharm - A Python IDE]: https://www.jetbrains.com/pycharm/

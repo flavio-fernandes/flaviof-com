@@ -192,7 +192,7 @@ Lastly, these links were super useful in getting acclimated with ddlog:
 
 - [A Differential Datalog (DDlog) tutorial](https://github.com/vmware/differential-datalog/blob/master/doc/tutorial/tutorial.md)
 - [Getting Started with DDlog ](https://hexgolems.com/2020/10/getting-started-with-ddlog/)
-- [Learn Datalog Today](http://www.learndatalogtoday.org/)
+- [Learn Datalog Today](https://www.learndatalogtoday.org/)
 - [DDlog program deep dive](http://deepdive.stanford.edu/writing-dataflow-ddlog#)
 
 Cheers!
@@ -208,4 +208,4 @@ Cheers!
 [benExplainsDdlog]: https://mail.openvswitch.org/pipermail/ovs-dev/2020-November/377104.html "Ben Pfaff talks about ddlog for ovn-northd"
 [ovn-ctl]: https://github.com/flavio-fernandes/ovn/blob/f56dafa83d6da6dee48632954b951af6dc536cb7/utilities/ovn-ctl "ovn-ctl"
 [testLoop]: https://github.com/flavio-fernandes/ovn/blob/f56dafa83d6da6dee48632954b951af6dc536cb7/tests/ovn-macros.at#L459-L465 "ovn-northd ddlog and non-ddlog test loop"
-[ovnUpstreamMeeting]: http://eavesdrop.openstack.org/meetings/ovn_community_development_discussion/2020/ovn_community_development_discussion.2020-11-12-18.15.log.html "2020-11-12-18.15.log"
+[ovnUpstreamMeeting]: https://eavesdrop.openstack.org/meetings/ovn_community_development_discussion/2020/ovn_community_development_discussion.2020-11-12-18.15.log.html "2020-11-12-18.15.log"
