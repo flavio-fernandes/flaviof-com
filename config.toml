@@ -47,3 +47,7 @@ pygmentsUseClasses = true
     # wikipedia = "username"
 [Params]
     logo = "img/avatar-icon.png"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

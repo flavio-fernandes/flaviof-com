@@ -11,6 +11,17 @@ My Winning Recipe for Being a Successful Engineer: The Synergy of Friendship and
 
 <!--more-->
 
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 4px; padding: 1rem; margin: 1rem 0;">
+🎧 <strong>Listen to a deep dive on this page here</strong>
+
+<audio controls>
+  <source src="http://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav" type="audio/wav">
+  Your browser does not support the audio element. <a href="http://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav">Audio Version Available</a>
+</audio>
+
+<em>(Generated using Google's NetworkLM feature)</em>
+</div>
+
 As I pause at the end of the year to reflect on the many [curveballs](https://www.collinsdictionary.com/dictionary/english/throw-someone-a-curve-ball) life threw at me in 2023,
 I've decided to revive this blog to share an epiphany about what has driven my success as a software engineer.
 It's easy to convince myself that I was at the right places at the right times, but I should dig a little deeper.
@@ -55,7 +66,7 @@ Education will not; the world is full of educated
 derelicts.
 
 Persistence and determination, alone are omnipotent.
-The slogan “Press On” has solved, and will always
+The slogan "Press On" has solved, and will always
 solve, the problems of the human race."
 
 Calvin Coolidge, 30th President of the USA
