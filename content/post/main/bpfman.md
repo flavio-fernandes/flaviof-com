@@ -22,6 +22,12 @@ Understanding and Using bpfman for eBPF Management
 <em>(Generated using Google's NetworkLM feature)</em>
 </div>
 
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 4px; padding: 1rem; margin: 1rem 0;">
+📄 <strong>View the bpfman PDF document</strong><br>
+<iframe src="img/bpfman/bpfmanBoothSlides.pdf" width="100%" height="600px" style="border: none;"></iframe>
+<p><a href="img/bpfman/bpfmanBoothSlides.pdf" target="_blank">Download PDF</a></p>
+</div>
+
 {{< figure src="img/bpfman/ebpfman-mind-map.png" title="" >}}
 
 - [bpfman.io](https://bpfman.io/): **Start here!!!**
