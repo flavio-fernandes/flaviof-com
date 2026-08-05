@@ -1,0 +1,12 @@
+<!-- Restores Hugo's built-in "gist" shortcode, deprecated in v0.143.0 and
+     removed in v0.156.0. Kept so existing posts keep rendering unchanged.
+
+     Usage, same as the original:
+       gist <username> <gist-id>
+       gist <username> <gist-id> <filename>
+
+     The markup below was matched against what is currently live on the site,
+     not against the old built-in source: the final version of the built-in had
+     dropped the obsolete type="application/javascript" attribute, so this omits
+     it too and the published pages come out byte-identical. -->
+<script src="https://gist.github.com/{{ index .Params 0 }}/{{ index .Params 1 }}.js{{ with $file := index .Params 2 }}?file={{ $file }}{{ end }}"></script>
