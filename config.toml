@@ -1,8 +1,13 @@
 BaseURL = "https://www.flaviof.com/blog2/"
-languageCode = "en-us"
+locale = "en-us"
 title = "flaviof_blog2"
 theme = "helix"
-googleAnalytics = "UA-54082757-1"
+# Analytics is off. The old Universal Analytics property (UA-54082757-1) was
+# shut down by Google on 1 July 2023 and collects nothing, and Hugo's internal
+# template stopped emitting anything at all for a UA- id -- the built pages
+# have carried no analytics for some time regardless of this setting. To turn
+# it back on, create a GA4 property and put its G-XXXXXXXXXX id here:
+#   googleAnalytics = "G-XXXXXXXXXX"
 ignoreFiles = [ "~$", "\\.gitignore$", "\\.gitkeep$" ]
 enableRobotsTXT = true
 pygmentsUseClasses = true
