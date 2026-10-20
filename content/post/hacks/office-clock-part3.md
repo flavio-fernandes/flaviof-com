@@ -16,7 +16,7 @@ posts: [part 1][part1] covered the hardware and [part 2][part2] covered the
 software. Those live on my old blog, so they will not show up in the sidebar
 here -- go read them first if you want the whole story.
 
-[![front panel](https://live.staticflickr.com/1640/26026460102_c277d6d820_h.jpg)](https://www.flickr.com/photos/38447095@N00/26026460102/ "Office Clock front panel")
+[![front panel](https://live.staticflickr.com/1640/26026460102_7b9ec41ef9_3k.jpg)](https://www.flickr.com/photos/38447095@N00/26026460102/ "Office Clock front panel")
 
 That thing has been on my office wall ever since, quietly telling me the time
 and dimming itself when the room gets dark. It never really broke. What broke,
