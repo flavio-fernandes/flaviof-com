@@ -50,7 +50,7 @@ pygmentsUseClasses = true
     name = "About"
     weight = 110
     identifier = "about"
-    url = "http://www.flaviof.com/blog/pages/about-me.html"
+    url = "/about/"
 [taxonomies]
     tag = "tags"
     category = "categories"
@@ -58,15 +58,16 @@ pygmentsUseClasses = true
 [Author]
     name = "Flavio Fernandes"
     email = "flavio@flaviof.com"
-    github = "flavio-fernandes"
-    twitter = "flaviofdev"
-    linkedin = "pub/flavio-fernandes/3/110/a26"
-    # facebook = "username"
-    # stackoverflow = "XXXXXXX/username"
-    # soundcloud = "username"
-    # wikipedia = "username"
+    # The social handles that used to sit here (a twitter one, and a linkedin
+    # value in the 2016 "pub/..." URL style) were never read by any template
+    # and are gone. The two links the site actually shows live in [Params].
 [Params]
     logo = "img/avatar-icon.png"
+    # Rendered by layouts/about.html. Read via .Site.Params rather
+    # than the [Author] block above, whose .Site.Author accessor is
+    # deprecated in current Hugo.
+    linkedin = "https://www.linkedin.com/in/flavio-fernandes-a261103/"
+    github = "https://github.com/flavio-fernandes"
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

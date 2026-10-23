@@ -1,0 +1,61 @@
+{{/* Layout for content/about.md, which sets layout = "about" in its front
+     matter. Hugo 0.146 reworked the template system: this file has to sit at
+     layouts/about.html. layouts/page/about.html -- the path the lookup-order
+     docs still show -- is not consulted, and the page silently falls through
+     to the theme's _default/single.html, post chrome and all.
+
+     Project-level, so the vendored 2016 theme stays untouched -- same reason
+     layouts/index.html and layouts/shortcodes/copy-buttons.html live here.
+
+     Deliberately NOT built on themes/helix/layouts/_default/single.html: this
+     is a page, not a post, so it gets no relative date, no tag row, no
+     prev/next buttons, no utteranc.es thread and no sidebar. */}}
+{{ partial "header" . }}
+
+{{/* The theme's header partial closes <head> before we get control, so the
+     page stylesheet is linked here instead. A rel=stylesheet link in the body
+     is honored by every browser, and the copy-buttons shortcode already
+     injects its <style> mid-body for the same reason. */}}
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/about.css" />
+
+<div class="about-container">
+
+  {{/* Swappable hero. Drop a generated image at static/img/about/hero.png
+       (or .jpg / .webp) and it is picked up on the next build -- no template
+       change. With no file at all the page just opens on the text block. */}}
+  {{ $hero := "" }}
+  {{ range slice "img/about/hero.png" "img/about/hero.jpg" "img/about/hero.webp" }}
+    {{ if and (eq $hero "") (fileExists (printf "static/%s" .)) }}
+      {{ $hero = . }}
+    {{ end }}
+  {{ end }}
+
+  <header class="about-hero{{ if not $hero }} about-hero-bare{{ end }}">
+    {{ with $hero }}
+      <div class="about-hero-photo">
+        <img src="{{ . }}" alt="An illustrated portrait of Flavio Fernandes" />
+      </div>
+    {{ end }}
+    <div class="about-hero-text">
+      <h1>Flavio Fernandes</h1>
+      <p class="about-tagline">
+        Retired from the job, not from the keyboard. Near Boston.
+      </p>
+      <p class="about-social">
+        {{ with .Site.Params.linkedin }}
+          <a class="about-btn" href="{{ . }}"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        {{ end }}
+        {{ with .Site.Params.github }}
+          <a class="about-btn" href="{{ . }}"><i class="fa fa-github"></i> GitHub</a>
+        {{ end }}
+      </p>
+    </div>
+  </header>
+
+  <article class="about">
+    {{ .Content }}
+  </article>
+
+</div>
+
+{{ partial "footer" . }}
