@@ -15,8 +15,8 @@ Understanding and Using bpfman for eBPF Management
 🎧 <strong>Listen to deep dive</strong>
 
 <audio controls>
-  <source src="http://flaviof.com/static/bpfman.wav" type="audio/wav">
-  Your browser does not support the audio element. <a href="http://flaviof.com/static/bpfman.wav">Audio Version Available</a>
+  <source src="https://flaviof.com/static/bpfman.wav" type="audio/wav">
+  Your browser does not support the audio element. <a href="https://flaviof.com/static/bpfman.wav">Audio Version Available</a>
 </audio>
 
 <em>(Generated using Google's NetworkLM feature)</em>

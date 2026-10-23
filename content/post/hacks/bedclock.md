@@ -17,7 +17,7 @@ Posted a [page in Github](https://github.com/flavio-fernandes/bedclock/tree/adaf
 Was also fortunate to have the opportunity to thank the Adafruit folks personally, including
 having it mentioned in the [Show-and-Tell](https://youtu.be/2VQixyqWGfE?t=584) of 10/Oct/18 at 7:41 pm ET.
 
-[![Show-and-Tell Adafruit](https://img.youtube.com//vi/2VQixyqWGfE/0.jpg)](https://youtu.be/2VQixyqWGfE?t=584 "Bedclock Adafruit Show-and-Tell")
+[![Show-and-Tell Adafruit](https://img.youtube.com/vi/2VQixyqWGfE/0.jpg)](https://youtu.be/2VQixyqWGfE?t=584 "Bedclock Adafruit Show-and-Tell")
 
 Fun times!
 

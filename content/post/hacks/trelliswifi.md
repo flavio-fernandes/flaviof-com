@@ -17,7 +17,7 @@ Check you the [page in Github](https://github.com/flavio-fernandes/trelliswifi/b
 I had the chance to show it to the Adafruit folks in the [Show-and-Tell](https://youtu.be/kMrRTtFP5I8?t=1324) of 26/Feb/20. Always a pleasure meeting them and seeing what all
 the makers who attend this show are building.
 
-[![Show-and-Tell Adafruit](https://img.youtube.com//vi/kMrRTtFP5I8/0.jpg)](https://youtu.be/kMrRTtFP5I8?t=1328 "Trellis Wifi Adafruit Show-and-Tell")
+[![Show-and-Tell Adafruit](https://img.youtube.com/vi/kMrRTtFP5I8/0.jpg)](https://youtu.be/kMrRTtFP5I8?t=1328 "Trellis Wifi Adafruit Show-and-Tell")
 
 In that recording, I did not make the font on my screen big enough. So I did a take 2 on that demo and posted that here:
 

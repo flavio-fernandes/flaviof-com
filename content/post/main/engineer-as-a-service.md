@@ -15,8 +15,8 @@ My Winning Recipe for Being a Successful Engineer: The Synergy of Friendship and
 🎧 <strong>Listen to a deep dive on this page here</strong>
 
 <audio controls>
-  <source src="http://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav" type="audio/wav">
-  Your browser does not support the audio element. <a href="http://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav">Audio Version Available</a>
+  <source src="https://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav" type="audio/wav">
+  Your browser does not support the audio element. <a href="https://flaviof.com/resume/beingaGoodEngineer_FriendshipandCompetence.wav">Audio Version Available</a>
 </audio>
 
 <em>(Generated using Google's NetworkLM feature)</em>
