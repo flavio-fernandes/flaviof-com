@@ -11,6 +11,21 @@ theme = "helix"
 ignoreFiles = [ "~$", "\\.gitignore$", "\\.gitkeep$" ]
 enableRobotsTXT = true
 pygmentsUseClasses = true
+
+# static/img is synced by Dropbox, which leaves macOS resource-fork droppings
+# (AppleDouble ._* files and .DS_Store) in the tree. ignoreFiles above only
+# applies to content; Hugo copies static/ verbatim, so these used to get
+# published -- img/.DS_Store and img/__MACOSX/ reached the live server that
+# way. Excluding them at the mount keeps them out of public/ even when they
+# reappear locally.
+[[module.mounts]]
+    source = "static"
+    target = "static"
+    files = [
+        "! .DS_Store", "! **/.DS_Store",
+        "! ._*", "! **/._*",
+        "! __MACOSX/**", "! **/__MACOSX/**",
+    ]
 [[menu.main]]
     name = "All"
     weight = 10

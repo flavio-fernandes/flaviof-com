@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" role="img"
+     aria-label="Two DMA channels feeding a PIO state machine in a loop, with the CPU not involved">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0a7a5a"/>
+    </marker>
+    <style>
+      .b  { fill:#f7f7f9; stroke:#333; stroke-width:1.5; rx:7; }
+      .t  { font:600 15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif; fill:#111; }
+      .s  { font:400 12.5px system-ui,-apple-system,Segoe UI,Roboto,sans-serif; fill:#555; }
+      .l  { font:600 12.5px system-ui,-apple-system,Segoe UI,Roboto,sans-serif; fill:#0a7a5a; }
+      .w  { stroke:#1a1a1a; stroke-width:1.8; fill:none; }
+      .g  { stroke:#0a7a5a; stroke-width:1.8; fill:none; }
+    </style>
+  </defs>
+
+  <!-- frame buffers -->
+  <rect class="b" x="18" y="92" width="186" height="74"/>
+  <text class="t" x="111" y="122" text-anchor="middle">two frame buffers</text>
+  <text class="s" x="111" y="143" text-anchor="middle">9,240 bytes each</text>
+  <text class="s" x="111" y="159" text-anchor="middle">14 bit planes per row</text>
+
+  <!-- DMA 1 -->
+  <rect class="b" x="268" y="92" width="168" height="74"/>
+  <text class="t" x="352" y="122" text-anchor="middle">DMA channel 1</text>
+  <text class="s" x="352" y="143" text-anchor="middle">streams the whole</text>
+  <text class="s" x="352" y="159" text-anchor="middle">frame into the PIO</text>
+
+  <!-- PIO -->
+  <rect class="b" x="500" y="92" width="168" height="74"/>
+  <text class="t" x="584" y="122" text-anchor="middle">PIO state machine</text>
+  <text class="s" x="584" y="143" text-anchor="middle">24 instructions, on</text>
+  <text class="s" x="584" y="159" text-anchor="middle">pio1, not pio0</text>
+
+  <!-- panel -->
+  <rect class="b" x="732" y="92" width="112" height="74"/>
+  <text class="t" x="788" y="122" text-anchor="middle">the panel</text>
+  <text class="s" x="788" y="143" text-anchor="middle">53 x 11</text>
+  <text class="s" x="788" y="159" text-anchor="middle">1 bit per channel</text>
+
+  <!-- main path -->
+  <path class="w" d="M204,129 H262"  marker-end="url(#a)"/>
+  <path class="w" d="M436,129 H494"  marker-end="url(#a)"/>
+  <path class="w" d="M668,129 H726"  marker-end="url(#a)"/>
+
+  <!-- DMA 2, the chaining channel -->
+  <rect class="b" x="268" y="238" width="168" height="66" style="stroke:#0a7a5a"/>
+  <text class="t" x="352" y="265" text-anchor="middle" style="fill:#0a7a5a">DMA channel 2</text>
+  <text class="s" x="352" y="286" text-anchor="middle">four bytes, nothing else</text>
+
+  <!-- channel 1 finishes -> triggers channel 2 -->
+  <path class="g" d="M396,166 V232" marker-end="url(#ag)"/>
+  <text class="l" x="406" y="203">frame done</text>
+
+  <!-- channel 2 writes ch1's read pointer and chains back -->
+  <path class="g" d="M308,238 V200 H236 V146 H262" marker-end="url(#ag)"/>
+  <text class="l" x="96" y="196">writes the next frame's</text>
+  <text class="l" x="96" y="212">address back into</text>
+  <text class="l" x="96" y="228">channel 1, then chains</text>
+
+  <!-- the point -->
+  <rect x="500" y="238" width="344" height="66" rx="7" fill="#fff" stroke="#bbb" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text class="t" x="672" y="265" text-anchor="middle" style="fill:#777">the CPU</text>
+  <text class="s" x="672" y="286" text-anchor="middle">is not in this picture, and that is the point</text>
+
+  <text class="s" x="18" y="40" style="font-size:13.5px">Once the processor has set this up, it steps out of it: the refresh keeps going</text>
+  <text class="s" x="18" y="60" style="font-size:13.5px">with no interrupt to service, even while the CPU is busy with something else.</text>
+</svg>
