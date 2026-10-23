@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Overrides themes/helix/layouts/index.html, which redirected to
+         categories/main/. The front page now lands on every post instead.
+         Kept here so the vendored 2016 theme stays untouched. -->
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="refresh" content="0;url={{ .Site.BaseURL }}post/" />
+  </head>
+</html>

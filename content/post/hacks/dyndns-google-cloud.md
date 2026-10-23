@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main", "hacks"]
+categories = ["work", "hacks"]
 date = "2019-10-05T18:20:00-05:00"
 tags = ["bash"]
 title = "dynamic DNS update"

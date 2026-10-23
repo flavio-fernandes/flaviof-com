@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main"]
+categories = ["work"]
 date = "2023-12-20T10:00:00-04:00"
 tags = ["viewpoint"]
 title = "Being a Good Engineer"

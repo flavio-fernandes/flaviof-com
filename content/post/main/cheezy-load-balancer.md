@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = [ "main", "hacks" ]
+categories = [ "work", "hacks" ]
 date = "2018-07-19T16:20:22-04:00"
 tags = [ "go" ]
 title = "Goroutines to load balance"

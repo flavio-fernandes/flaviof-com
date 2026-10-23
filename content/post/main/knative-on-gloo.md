@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = [ "main" ]
+categories = [ "work" ]
 date = "2019-04-02T01:00:00-04:00"
 tags = [ "k8", "knative" ]
 title = "Knative demo using Gloo"

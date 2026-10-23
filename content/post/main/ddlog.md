@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main"]
+categories = ["work"]
 date = "2020-11-15T17:01:00-05:00"
 tags = ["bash", "ovn"]
 title = "ddlog and OVN"

@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main", "hacks"]
+categories = ["work", "hacks"]
 date = "2019-11-22T22:22:22-05:00"
 tags = ["bash", "libvirt"]
 title = "vagrant libvirt provider"

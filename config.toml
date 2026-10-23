@@ -17,10 +17,10 @@ pygmentsUseClasses = true
     identifier = "post"
     url = "post/"
 [[menu.main]]
-    name = "Main"
+    name = "Work"
     weight = 20
-    identifier = "main"
-    url = "/categories/main/"
+    identifier = "work"
+    url = "/categories/work/"
 [[menu.main]]
     name = "Hacks"
     weight = 30

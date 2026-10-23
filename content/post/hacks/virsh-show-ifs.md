@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main", "hacks"]
+categories = ["work", "hacks"]
 date = "2016-12-07T09:40:32-05:00"
 tags = ["bash", "libvirt"]
 title = "virsh show ifs"

@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main"]
+categories = ["work"]
 date = "2021-07-02T17:01:00-05:00"
 tags = ["ovn", "python"]
 title = "OpenStack Port Forwarding using OVN"

@@ -1,7 +1,7 @@
 +++
 author = "flaviof"
 co-author = "Matthew Kassawara"
-categories = ["main"]
+categories = ["work"]
 date = "2016-07-28T01:39:42-04:00"
 tags = ["ovn"]
 title = "just ovn nodes"

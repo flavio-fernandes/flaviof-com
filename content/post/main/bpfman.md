@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main"]
+categories = ["work"]
 date = "2025-03-28T10:00:00-04:00"
 tags = [ "k8" ]
 title = "bpfman: An eBPF Manager"

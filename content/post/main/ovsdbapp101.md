@@ -1,6 +1,6 @@
 +++
 author = "flaviof"
-categories = ["main"]
+categories = ["work"]
 date = "2019-11-30T17:01:00-05:00"
 tags = ["bash", "ovn", "python"]
 title = "OVN via OVSDBApp"
